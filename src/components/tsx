@@ -1,0 +1,32 @@
+import { OpeningHoursTable, OpenStatus } from "./OpenStatus";
+import Reveal from "./Reveal";
+
+export default function OpeningHours() {
+  return (
+    <section className="bg-cream py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <Reveal>
+            <p className="label text-coffee mb-4">Opening Hours</p>
+            <h2 className="font-display text-[clamp(2rem,5vw,4rem)] leading-[1] tracking-tight">
+              WHEN WE'RE
+              <br />
+              <span className="italic text-coffee">POURING.</span>
+            </h2>
+            <div className="mt-8">
+              <OpenStatus large />
+            </div>
+            <p className="mt-4 text-xs uppercase tracking-widest text-charcoal/50">
+              Times shown in Jakarta local time (WIB)
+            </p>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="rounded-2xl bg-white p-8 shadow-sm">
+              <OpeningHoursTable />
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
